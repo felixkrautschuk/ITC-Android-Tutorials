@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NavigationDrawerTutorial2</string>
+
+    <string-array name="items">
+        <item>Home</item>
+        <item>Android</item>
+        <item>Windows</item>
+        <item>Linux</item>
+        <item>Raspberry Pi</item>
+        <item>WordPress</item>
+        <item>Videos</item>
+        <item>Contact Us</item>
+    </string-array>
+</resources>
