@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/NavigationDrawerTutorial.iml" filepath="$PROJECT_DIR$/NavigationDrawerTutorial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android-support-v13/android-support-v13.iml" filepath="$PROJECT_DIR$/android-support-v13/android-support-v13.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
