@@ -2,6 +2,8 @@
 <resources>
 
     <string name="app_name">NavigationDrawerTutorial3</string>
+    <string name="drawer_open">Open NavigationDrawer</string>
+    <string name="drawer_close">Close NavigationDrawer</string>
     <string-array name="navigation_drawer_items_array">
         <item>Home</item>
         <item>Android</item>

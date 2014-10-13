@@ -3,7 +3,9 @@ package com.example.felix.navigationdrawertutorial3_icon;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,7 +21,8 @@ public class MainActivity extends Activity
     private DrawerLayout drawerLayout;
     private ListView drawerList;
     private ObjectDrawerItem[] objectDrawerItems;
-    DrawerItemCustomAdapter adapter;
+    private DrawerItemCustomAdapter adapter;
+    private ActionBarDrawerToggle drawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -43,10 +46,41 @@ public class MainActivity extends Activity
 
         adapter = new DrawerItemCustomAdapter(this, R.layout.listview_item_row, objectDrawerItems);
         drawerList.setAdapter(adapter);
-
         drawerList.setOnItemClickListener(new DrawerItemClickListener());
+
+        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.drawable.ic_drawer, R.string.drawer_open, R.string.drawer_close)
+        {
+            public void onDrawerOpened(View drawerView)
+            {
+                getActionBar().setTitle(getTitle());
+                invalidateOptionsMenu();
+            }
+
+            public void onDrawerClosed(View view)
+            {
+                getActionBar().setTitle(getTitle());
+                invalidateOptionsMenu();
+            }
+        };
+
+        drawerLayout.setDrawerListener(drawerToggle);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setHomeButtonEnabled(true);
     }
 
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState)
+    {
+        super.onPostCreate(savedInstanceState);
+        drawerToggle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig)
+    {
+        super.onConfigurationChanged(newConfig);
+        drawerToggle.onConfigurationChanged(newConfig);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
@@ -62,7 +96,10 @@ public class MainActivity extends Activity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        if (drawerToggle.onOptionsItemSelected(item))
+        {
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
