@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 
 public class MainActivity extends Activity
@@ -79,7 +80,38 @@ public class MainActivity extends Activity
 
             switch (position)
             {
-
+                case 0:
+                    Toast.makeText(getApplicationContext(), "Home", Toast.LENGTH_SHORT).show();
+                    drawerLayout.closeDrawer(drawerList);
+                    break;
+                case 1:
+                    Toast.makeText(getApplicationContext(), "Android", Toast.LENGTH_SHORT).show();
+                    drawerLayout.closeDrawer(drawerList);
+                    break;
+                case 2:
+                    Toast.makeText(getApplicationContext(), "Windows", Toast.LENGTH_SHORT).show();
+                    drawerLayout.closeDrawer(drawerList);
+                    break;
+                case 3:
+                    Toast.makeText(getApplicationContext(), "Linux", Toast.LENGTH_SHORT).show();
+                    drawerLayout.closeDrawer(drawerList);
+                    break;
+                case 4:
+                    Toast.makeText(getApplicationContext(), "Raspberry Pi", Toast.LENGTH_SHORT).show();
+                    drawerLayout.closeDrawer(drawerList);
+                    break;
+                case 5:
+                    Toast.makeText(getApplicationContext(), "Apple", Toast.LENGTH_SHORT).show();
+                    drawerLayout.closeDrawer(drawerList);
+                    break;
+                case 6:
+                    Toast.makeText(getApplicationContext(), "Videos", Toast.LENGTH_SHORT).show();
+                    drawerLayout.closeDrawer(drawerList);
+                    break;
+                case 7:
+                    Toast.makeText(getApplicationContext(), "Contact Us", Toast.LENGTH_SHORT).show();
+                    drawerLayout.closeDrawer(drawerList);
+                    break;
             }
 
             if (fragment != null)
