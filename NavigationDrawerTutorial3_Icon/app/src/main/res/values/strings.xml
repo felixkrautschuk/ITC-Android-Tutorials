@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">NavigationDrawerTutorial3</string>
+    <string name="app_name">NavigationDrawerTutorial</string>
     <string name="drawer_open">Open NavigationDrawer</string>
     <string name="drawer_close">Close NavigationDrawer</string>
     <string-array name="navigation_drawer_items_array">
