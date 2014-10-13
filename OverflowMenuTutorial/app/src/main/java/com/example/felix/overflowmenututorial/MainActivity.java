@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewConfiguration;
+
+import java.lang.reflect.Field;
 
 
 public class MainActivity extends Activity
@@ -14,6 +17,22 @@ public class MainActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        try
+        {
+            ViewConfiguration config = ViewConfiguration.get(this);
+            Field menuKeyField = ViewConfiguration.class
+                    .getDeclaredField("sHasPermanentMenuKey");
+            if (menuKeyField != null)
+            {
+                menuKeyField.setAccessible(true);
+                menuKeyField.setBoolean(config, false);
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
 
